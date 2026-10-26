@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Total de Vendas</title>
+</head>
+<body>
+
+    <h1>Total de Itens Vendidos</h1>
+
+    <label>Quantidade de itens:</label>
+    <input type="number" id="quantidade">
+
+    <br><br>
+
+    <label>Valor de cada item:</label>
+    <input type="number" id="valor" step="0.01">
+
+    <br><br>
+
+    <button onclick="calcular()">Calcular Total</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let quantidade = Number(document.getElementById("quantidade").value);
+            let valor = Number(document.getElementById("valor").value);
+
+            let total = quantidade * valor;
+
+            document.getElementById("resultado").innerHTML =
+                "O valor total é: R$ " + total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

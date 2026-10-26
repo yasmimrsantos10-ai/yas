@@ -1,0 +1,42 @@
+   
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Reajuste da Mensalidade</title>
+</head>
+<body>
+
+    <h1>Reajuste da Mensalidade</h1>
+
+    <label>Valor da mensalidade:</label>
+    <input type="number" id="mensalidade" step="0.01">
+
+    <br><br>
+
+    <label>Taxa de reajuste (%):</label>
+    <input type="number" id="taxa" step="0.01">
+
+    <br><br>
+
+    <button onclick="calcular()">Calcular Reajuste</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let mensalidade = Number(document.getElementById("mensalidade").value);
+            let taxa = Number(document.getElementById("taxa").value);
+
+            let reajuste = mensalidade * taxa / 100;
+            let novoValor = mensalidade + reajuste;
+
+            document.getElementById("resultado").innerHTML =
+                "Valor do reajuste: R$ " + reajuste.toFixed(2) +
+                "<br>Nova mensalidade: R$ " + novoValor.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
+             
